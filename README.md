@@ -1,2 +1,6 @@
 # advent-of-css-2023
-https://www.adventofcss.com/
+
+[Advent of CSS](https://www.adventofcss.com/)
+
+- [Matt](https://github.com/TeddyGavi)
+- [Roni](https://github.com/OlliesWorld)
