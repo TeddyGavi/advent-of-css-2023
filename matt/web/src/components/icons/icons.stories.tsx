@@ -12,10 +12,19 @@
 
 import type { Meta, StoryObj } from '@storybook/react'
 
-import Icon from './Icon'
+import Icon, { colors } from './Icon'
 
 const meta: Meta<typeof Icon> = {
   component: Icon,
+  argTypes: {
+    color: {
+      options: Object.keys(colors),
+      mapping: colors,
+      control: {
+        type: 'select',
+      },
+    },
+  },
   tags: ['autodocs'],
 }
 
