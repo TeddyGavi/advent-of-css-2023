@@ -26,13 +26,12 @@ interface IIcon {
 }
 
 export default function Icon({ id, color = 'black', size = 24 }: IIcon) {
-  console.log(color)
   const iconStyle = {
     fill: color,
   }
   return (
     <svg width={size} height={size}>
-      <use style={iconStyle} href={`/sprite-icon/sprite1.svg#${id}`} />
+      <use style={iconStyle} href={`/sprite-icon/sprite.svg#${id}`} />
     </svg>
   )
 }
