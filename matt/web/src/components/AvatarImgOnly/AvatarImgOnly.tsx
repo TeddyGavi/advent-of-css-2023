@@ -1,12 +1,10 @@
 const AvatarImgOnly = ({ image }) => {
   return (
-    <div className="flex h-[68px] w-[68px] items-center justify-center rounded-full border border-spanishGreen bg-white  font-sans text-4xl font-bold text-white">
-      <img
-        alt="avatar of user"
-        src={`/images/AVATAR-PLACEHOLDERS/${image}`}
-        className="flex h-[90%] w-[90%] items-center justify-center rounded-full "
-      />
-    </div>
+    <img
+      alt="avatar of user"
+      src={`/images/AVATAR-PLACEHOLDERS/${image}`}
+      className="h-[68px] w-[68px] rounded-full ring-[1px] ring-spanishGreen ring-offset-4"
+    />
   )
 }
 

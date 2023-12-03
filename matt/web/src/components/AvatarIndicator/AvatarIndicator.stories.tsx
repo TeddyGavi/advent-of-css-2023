@@ -12,32 +12,31 @@
 
 import type { Meta, StoryObj } from '@storybook/react'
 
-import AvatarImgIndicator from './AvatarImgIndicator'
+import AvatarIndicator from './AvatarIndicator'
 
-const meta: Meta<typeof AvatarImgIndicator> = {
-  component: AvatarImgIndicator,
+const meta: Meta<typeof AvatarIndicator> = {
+  component: AvatarIndicator,
   tags: ['autodocs'],
 }
 
 export default meta
 
-type Story = StoryObj<typeof AvatarImgIndicator>
+type Story = StoryObj<typeof AvatarIndicator>
 
 export const Primary: Story = {
   args: {
-    image: 'avatar-01.png',
-    indicator: 'check',
+    status: 'check',
   },
 }
+
 export const DoNotDisturb: Story = {
   args: {
-    image: 'avatar-01.png',
-    indicator: 'minus',
+    status: 'minus',
   },
 }
+
 export const Question: Story = {
   args: {
-    image: 'avatar-01.png',
-    indicator: 'question',
+    status: 'question',
   },
 }

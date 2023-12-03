@@ -1,4 +1,5 @@
 import Icon from '../icons/Icon'
+import AvatarIndicator from '../AvatarIndicator/AvatarIndicator'
 
 const AvatarImgIndicator = ({ image, indicator }) => {
   return (
@@ -8,8 +9,9 @@ const AvatarImgIndicator = ({ image, indicator }) => {
         src={`/images/AVATAR-PLACEHOLDERS/${image}`}
         className="flex h-[90%] w-[90%] items-center justify-center rounded-full "
       />
-      <div className="absolute z-10 h-[16px] w-[16px] bg-black"></div>
-      <Icon id={indicator} />
+      <div className="absolute bottom-0 right-0">
+        <AvatarIndicator status={indicator} />
+      </div>
     </div>
   )
 }

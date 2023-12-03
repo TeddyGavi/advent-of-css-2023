@@ -17,6 +17,8 @@ export enum colors {
   pastelMagenta = '#ff9dbf',
   padua = '#b1e3cc',
   vistaBlue = '#94d1b4',
+  white = '#ffffff',
+  black = '#000000',
 }
 
 interface IIcon {
@@ -25,7 +27,7 @@ interface IIcon {
   size?: number
 }
 
-export default function Icon({ id, color = 'black', size = 24 }: IIcon) {
+export default function Icon({ id, color, size = 24 }: IIcon) {
   const iconStyle = {
     fill: color,
   }
