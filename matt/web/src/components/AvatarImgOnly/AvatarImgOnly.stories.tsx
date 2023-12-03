@@ -14,8 +14,26 @@ import type { Meta, StoryObj } from '@storybook/react'
 
 import AvatarImgOnly from './AvatarImgOnly'
 
+const avatarImgs = (): string[] => {
+  const result = []
+  for (let i = 1; i < 10; i++) {
+    result.push(`avatar-0${i}.png`)
+  }
+  return result
+}
+const avatars = avatarImgs()
+
 const meta: Meta<typeof AvatarImgOnly> = {
   component: AvatarImgOnly,
+  argTypes: {
+    image: {
+      options: avatars,
+      control: {
+        type: 'select',
+      },
+    },
+  },
+  tags: ['autodocs'],
 }
 
 export default meta

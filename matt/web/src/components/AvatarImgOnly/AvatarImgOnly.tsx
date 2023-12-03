@@ -1,4 +1,4 @@
-const AvatarImgOnly = ({ image }) => {
+const AvatarImgOnly = ({ image }: { image: string }) => {
   return (
     <img
       alt="avatar of user"

@@ -8,7 +8,7 @@ import AvatarImgOnly from './AvatarImgOnly'
 describe('AvatarImgOnly', () => {
   it('renders successfully', () => {
     expect(() => {
-      render(<AvatarImgOnly />)
+      render(<AvatarImgOnly image="avatar-01.png" />)
     }).not.toThrow()
   })
 })

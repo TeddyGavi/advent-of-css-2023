@@ -8,7 +8,7 @@ import AvatarImgIndicator from './AvatarImgIndicator'
 describe('AvatarImgIndicator', () => {
   it('renders successfully', () => {
     expect(() => {
-      render(<AvatarImgIndicator />)
+      render(<AvatarImgIndicator image="avatar-01.png" indicator="check" />)
     }).not.toThrow()
   })
 })
