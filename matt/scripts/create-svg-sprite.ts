@@ -1,5 +1,6 @@
-import fs from 'fs'
-
+const fs = require('fs')
+const path = require('path')
+const readline = require('readline')
 /**
  * takes in a folder and creates a svg spite filestructure
  * structure of sprite file is:
@@ -16,3 +17,64 @@ import fs from 'fs'
 </svg>
 
  */
+
+const importSvgPath = path.resolve(__dirname, 'svg-icons')
+const outputSvgPath = path.resolve(
+  process.cwd(),
+  'web',
+  'public',
+  'sprite-icon',
+  'sprite.svg'
+)
+
+const svgFiles = fs.readdirSync(importSvgPath, (err, files) => {
+  if (err) {
+    console.error('Error reading directory', err)
+    return
+  }
+  return files
+})
+
+const spriteContent = svgFiles
+  .filter((file) => path.extname(file).toLowerCase() === '.svg')
+  .map((file) => {
+    const svgId = path.basename(file, '.svg')
+    const svgContent = fs.readFileSync(path.join(importSvgPath, file), 'utf-8')
+    const cleanedSvgContent = svgContent
+      .replace(/<svg[^>]*>/, '')
+      .replace(/<\/svg>/, '')
+      .replace(/xmlns=".*?"/g, '')
+      .replace(/fill-rule=".*?"/g, '')
+      .replace(/clip-rule=".*?"/g, '')
+      .replace(/fill=".*?"/g, '')
+
+    return `<symbol id="${svgId}" viewBox="0 0 24 24"><title>${svgId}</title>${cleanedSvgContent}</symbol>`
+  })
+  .join('\n')
+
+const svgSpriteContent = `<svg xmlns="http://www.w3.org/2000/svg"><defs>${spriteContent}</defs></svg>`
+
+if (fs.existsSync(outputSvgPath)) {
+  const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout,
+  })
+
+  rl.question(
+    `File "${outputSvgPath}" already exists. Do you want to overwrite it? (y/n): `,
+    (answer) => {
+      if (answer.toLowerCase() === 'y') {
+        fs.writeFileSync(outputSvgPath, svgSpriteContent, 'utf-8')
+        console.log('SVG sprite file overwritten successfully:', outputSvgPath)
+      } else {
+        console.log('Operation aborted.')
+      }
+
+      rl.close()
+    }
+  )
+} else {
+  // File does not exist, create it
+  fs.writeFileSync(outputSvgPath, svgSpriteContent, 'utf-8')
+  console.log('SVG sprite file created successfully:', outputSvgPath)
+}

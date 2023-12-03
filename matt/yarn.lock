@@ -7352,7 +7352,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:*":
+"@types/node@npm:*, @types/node@npm:^20.10.2":
   version: 20.10.2
   resolution: "@types/node@npm:20.10.2"
   dependencies:
@@ -20899,7 +20899,9 @@ __metadata:
   dependencies:
     "@redwoodjs/cli-storybook": 6.4.2
     "@redwoodjs/core": 6.4.2
+    "@types/node": ^20.10.2
     prettier-plugin-tailwindcss: 0.4.1
+    ts-node: ^10.9.1
   languageName: unknown
   linkType: soft
 
@@ -22782,7 +22784,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ts-node@npm:10.9.1":
+"ts-node@npm:10.9.1, ts-node@npm:^10.9.1":
   version: 10.9.1
   resolution: "ts-node@npm:10.9.1"
   dependencies:
