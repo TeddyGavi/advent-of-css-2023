@@ -1,0 +1,31 @@
+{
+  "private": true,
+  "workspaces": {
+    "packages": [
+      "api",
+      "web"
+    ]
+  },
+  "scripts": {
+    "createSvgSprite": "ts-node ./scripts/create-svg-sprite.ts"
+  },
+  "devDependencies": {
+    "@redwoodjs/cli-storybook": "6.4.2",
+    "@redwoodjs/core": "6.4.2",
+    "@types/node": "^20.10.2",
+    "prettier-plugin-tailwindcss": "0.4.1",
+    "ts-node": "^10.9.1"
+  },
+  "eslintConfig": {
+    "extends": "@redwoodjs/eslint-config",
+    "root": true
+  },
+  "engines": {
+    "node": "=18.x",
+    "yarn": ">=1.15"
+  },
+  "prisma": {
+    "seed": "yarn rw exec seed"
+  },
+  "packageManager": "yarn@3.7.0"
+}
