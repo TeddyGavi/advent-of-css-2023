@@ -13,3 +13,23 @@
 /**
  * END --- SETUP TAILWINDCSS EDIT
  */
+@layer base {
+svg {
+  @apply fill-current;
+}
+}
+
+@layer components {
+.indicator {
+  @apply center h-6 w-6 rounded-full border-2
+}
+}
+
+@layer utilities {
+.center {
+  @apply flex justify-center items-center border-white;
+}
+.same {
+  @apply h-18 w-18 rounded-full border-avatar object-cover bg-spanishGreen text-2xl font-bold uppercase text-white
+}
+}
