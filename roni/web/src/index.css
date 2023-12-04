@@ -17,8 +17,33 @@
 svg {
   @apply fill-current;
 }
+label {
+  @apply font-handwriting uppercase text-xl tracking-tighter;
+}
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+input[type="tel"],
+input[type="url"]
+ {
+  @apply font-sans text-2xl h-[100px] w-full px-7 border-black border-2;
+}
+label:has(+ input:placeholder-shown) {
+  @apply text-3xl absolute top-8 left-8 pointer-events-none transition-all duration-300;
+}
+label:has(+ input:focus),
+label:has(+ input){
+  @apply absolute top-2 left-2 text-xl
 }
 
+label:has(+ input:invalid:not(:placeholder-shown)) {
+  @apply text-white;
+}
+input:invalid:not(:placeholder-shown) {
+  @apply bg-orangeRed border-fireEngineRed;
+}
+}
 @layer components {
 .indicator {
   @apply center h-6 w-6 rounded-full border-2
