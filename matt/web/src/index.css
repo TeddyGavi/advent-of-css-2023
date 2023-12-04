@@ -14,3 +14,35 @@
 /**
  * END --- SETUP TAILWINDCSS EDIT
  */
+
+@layer base {
+  label {
+    @apply font-handwriting text-xl uppercase tracking-tighter;
+  }
+
+  input:placeholder-shown + label {
+    @apply pointer-events-none absolute left-8 top-8 text-3xl transition-all duration-300;
+  }
+
+  input + label,
+  input:focus + label {
+    @apply absolute left-2 top-2 text-xl;
+  }
+
+  input[type='text'],
+  input[type='email'],
+  input[type='password'],
+  input[type='url'],
+  input[type='tel'],
+  input[type='number'] {
+    @apply h-[100px] w-full border border-black px-7 font-sans text-2xl;
+  }
+
+  input:invalid:not(input:placeholder-shown) + label {
+    @apply text-white;
+  }
+
+  input:invalid:not(input:placeholder-shown) {
+    @apply border-fireEngineRed bg-orangeRed;
+  }
+}

@@ -26,7 +26,7 @@ type Story = StoryObj<typeof FormField>
 export const Primary: Story = {
   args: {
     id: 'input',
-    type: 'text',
+    type: 'email',
     label: 'Name',
   },
 }
