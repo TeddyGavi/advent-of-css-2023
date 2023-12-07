@@ -24,8 +24,8 @@ module.exports = {
         vistaBlue: '#94d1b4' /* light green - placeholder color */,
       },
       backgroundImage: {
-        'auth-pages': "url('images/bg__auth.svg')",
-        'secret-santa': "url('images/logo__secret-santa.svg')",
+        'auth-pages': 'url("/images/bg__auth.svg")',
+        'secret-santa': 'url("/images/logo__secret-santa.svg")',
       },
     },
     fontFamily: {
