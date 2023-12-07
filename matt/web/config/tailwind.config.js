@@ -23,6 +23,10 @@ module.exports = {
         padua: '#b1e3cc' /* lightest green - placeholder color */,
         vistaBlue: '#94d1b4' /* light green - placeholder color */,
       },
+      backgroundImage: {
+        'auth-pages': 'url("/images/bg__auth.svg")',
+        'secret-santa': 'url("/images/logo__secret-santa.svg")',
+      },
     },
     fontFamily: {
       condensed: ['Bebas Neue', 'sans-serif'],
