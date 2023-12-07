@@ -1,4 +1,5 @@
 import { MetaTags } from '@redwoodjs/web'
+import { useEffect, useState } from 'react'
 import PasswordFormField from 'src/components/PasswordFormField/PasswordFormField'
 import AuthLayout from 'src/layouts/AuthLayout/AuthLayout'
 import FooterLayout from 'src/layouts/FooterLayout/FooterLayout'
@@ -10,6 +11,11 @@ import FooterLayout from 'src/layouts/FooterLayout/FooterLayout'
   /* <div className="h-60 w-60 bg-secret-santa bg-contain bg-no-repeat lg:h-96 lg:w-96 lg:bg-center"></div> */
 }
 const LoginPage = () => {
+  const [footerHeight, setFooterHeight] = useState<string>('')
+  useEffect(() => {
+    const footer = document.getElementById('footer').clientHeight
+    setFooterHeight(`h-[${footer}px]`)
+  }, [])
   return (
     <AuthLayout>
       <MetaTags title="Login" description="Login page" />
@@ -39,6 +45,7 @@ const LoginPage = () => {
           </p>
         </form>
       </div>
+      <div className={`${footerHeight} w-screen`}></div>
       <FooterLayout></FooterLayout>
     </AuthLayout>
   )

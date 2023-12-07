@@ -16,6 +16,12 @@
  */
 
 @layer base {
+  main {
+    @apply relative z-10 mb-[350px] overflow-scroll;
+  }
+  svg {
+    @apply fill-current;
+  }
   label {
     @apply font-handwriting text-xl uppercase tracking-tighter;
   }

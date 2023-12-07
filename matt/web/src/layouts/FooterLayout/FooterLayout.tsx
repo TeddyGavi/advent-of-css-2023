@@ -19,6 +19,7 @@ const FooterLayout = () => {
   }, [])
   return (
     <footer
+      id="footer"
       className={`min-[1440px] fixed bottom-0 left-0 -z-10 flex min-h-fit w-full flex-col items-center justify-center bg-acadia py-6 dark:bg-blackPearl`}
     >
       <img
