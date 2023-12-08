@@ -1,4 +1,4 @@
-import Footer from "src/components/Footer/Footer"
+import Footer from "src/components/Footer/Footer";
 
 type AuthLayoutProps = {
   children?: React.ReactNode
