@@ -1,12 +1,6 @@
 import { useState } from 'react'
 
-const HamMenu = () => {
-  const [isClicked, setIsClicked] = useState(true)
-
-  const toggleNav = () => {
-    setIsClicked(prev => !prev)
-  }
-
+const HamMenu = ({ isClicked, toggleNav }) => {
   return (
     <button
       className="flex h-[58px] w-[68px] flex-col items-center justify-center bg-supernova"

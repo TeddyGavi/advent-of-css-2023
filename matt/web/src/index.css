@@ -52,3 +52,21 @@
     @apply border-fireEngineRed bg-orangeRed;
   }
 }
+
+@layer components {
+  .top-nav li {
+    @apply font-condensed text-[72px] uppercase leading-none tracking-wide;
+  }
+
+  .top-nav li a {
+    @apply hover:text-orangeRed;
+  }
+
+  .bottom-nav ul {
+    @apply flex flex-col gap-3;
+  }
+
+  .bottom-nav ul a {
+    @apply hover:text-orangeRed;
+  }
+}
