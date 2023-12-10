@@ -13,20 +13,30 @@ const Navigation = () => {
         isClicked ? '-translate-x-[120%]' : 'translate-x-0'
       }h-screen w-[460px] flex-col justify-between bg-supernova px-12 pb-12 pt-[160px] font-condensed transition-transform duration-500`}
     >
-      <nav className="text-6xl uppercase">
+      <nav className="top-nav text-6xl uppercase">
         <ul>
-          <li>Dashboard</li>
-          <li>Our Event</li>
-          <li>My Wish List</li>
+          <li>
+            <a href="#">Dashboard</a>
+          </li>
+          <li>
+            <a href="#">Our Event</a>
+          </li>
+          <li>
+            <a href="#">My Wish List</a>
+          </li>
         </ul>
       </nav>
-      <nav>
+      <nav className="bottom-nav">
+        <div className="mb-2 font-condensed text-5xl uppercase text-spanishGreen">
+          Past Events
+        </div>
         <ul>
-          <li className="text-spanishGreen">Past Events</li>
           <li>
-            <p className="text-xl lowercase">Balthis Christmas</p>
-            <p className="font-sans text-sm">December 23, 2023</p>
-          </li>
+            <a href="#">
+              <div className="text-2xl font-bold">Charlie Brown Christmas</div>
+              <div>December 23, 2023</div>
+            </a>
+          </li>{' '}
         </ul>
       </nav>
       <div className="absolute left-6 top-8">
