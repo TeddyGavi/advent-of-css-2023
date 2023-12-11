@@ -26,6 +26,7 @@ module.exports = {
       backgroundImage: {
         'auth-pages': 'url("/images/bg__auth.svg")',
         'secret-santa': 'url("/images/logo__secret-santa.svg")',
+        interior: 'url("/images/bg__interior.svg")',
       },
     },
     fontFamily: {
