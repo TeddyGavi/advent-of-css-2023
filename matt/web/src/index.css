@@ -54,6 +54,14 @@
 }
 
 @layer components {
+  .dropdown-list {
+    @apply flex items-center gap-3;
+  }
+
+  .dropdown-list:hover {
+    @apply text-orangeRed;
+  }
+
   .top-nav li {
     @apply font-condensed text-[72px] uppercase leading-none tracking-wide;
   }
