@@ -51,6 +51,34 @@
   input:invalid:not(input:placeholder-shown) {
     @apply border-fireEngineRed bg-orangeRed;
   }
+
+  input[type='checkbox'] {
+    appearance: none;
+    background-color: white;
+    margin: 0;
+    font: inherit;
+    color: currentColor;
+    width: 40px;
+    height: 40px;
+    transform: translateY(-0.075em);
+    display: grid;
+    place-content: center;
+  }
+  input[type='checkbox']::before {
+    content: '';
+    width: 1em;
+    height: 1em;
+    transform: scale(0);
+    transition: 120ms transform ease-in-out;
+    background: url('/images/logo__checkmark.svg') no-repeat center;
+    background-size: contain;
+  }
+  input[type='checkbox']:checked::before {
+    transform: scale(1);
+  }
+  input[type='checkbox']:focus {
+    outline: max(2px, 0.15em) solid white;
+  }
 }
 
 @layer components {
