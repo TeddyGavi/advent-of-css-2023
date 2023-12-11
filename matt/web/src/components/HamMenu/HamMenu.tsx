@@ -1,10 +1,8 @@
-import { useState } from 'react'
-
 const HamMenu = ({ isClicked, toggleNav }) => {
   return (
     <button
       className="flex h-[58px] w-[68px] flex-col items-center justify-center bg-supernova"
-      onClick={toggleNav}
+      onClick={() => toggleNav()}
     >
       <div
         className={`absolute h-[3px] w-12  bg-black transition-transform ${

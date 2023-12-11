@@ -22,4 +22,16 @@ export default meta
 
 type Story = StoryObj<typeof HamMenu>
 
-export const Primary: Story = {}
+export const HideMenu: Story = {
+  args: {
+    isClicked: true,
+    toggleNav: () => {},
+  },
+}
+
+export const ShowMenu: Story = {
+  args: {
+    isClicked: false,
+    toggleNav: () => false,
+  },
+}
