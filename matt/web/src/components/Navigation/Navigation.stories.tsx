@@ -12,26 +12,14 @@
 
 import type { Meta, StoryObj } from '@storybook/react'
 
-import HamMenu from './HamMenu'
+import Navigation from './Navigation'
 
-const meta: Meta<typeof HamMenu> = {
-  component: HamMenu,
+const meta: Meta<typeof Navigation> = {
+  component: Navigation,
 }
 
 export default meta
 
-type Story = StoryObj<typeof HamMenu>
+type Story = StoryObj<typeof Navigation>
 
-export const HideMenu: Story = {
-  args: {
-    isClicked: true,
-    toggleNav: () => {},
-  },
-}
-
-export const ShowMenu: Story = {
-  args: {
-    isClicked: false,
-    toggleNav: () => false,
-  },
-}
+export const Primary: Story = {}
