@@ -26,12 +26,12 @@
     @apply font-handwriting text-xl uppercase tracking-tighter;
   }
 
-  input:placeholder-shown + label {
+  input:placeholder-shown:not(input[type='checkbox']) + label {
     @apply pointer-events-none absolute left-8 top-8 text-3xl transition-all duration-300;
   }
 
-  input + label,
-  input:focus + label {
+  input:not(input[type='checkbox']) + label,
+  input:focus:not(input[type='checkbox']) + label {
     @apply absolute left-2 top-2 text-xl;
   }
 
@@ -104,5 +104,8 @@
 
   .bottom-nav ul a {
     @apply hover:text-orangeRed;
+  }
+  .checkbox-input-label {
+    @apply flex items-center gap-3;
   }
 }
