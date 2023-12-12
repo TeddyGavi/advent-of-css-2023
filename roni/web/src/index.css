@@ -48,6 +48,18 @@ input:invalid:not(:placeholder-shown) {
 }
 }
 @layer components {
+  .dropdown {
+    @apply relative top-6 left-6;
+  }
+
+  .dropdown:before {
+    content: "";
+    @apply border-[12px] border-transparent border-b-white absolute -top-6 left-8
+  }
+
+  .dropdown li {
+    @apply font-condensed text-3xl uppercase text-black flex items-center gap-3
+  }
 .indicator {
   @apply center h-6 w-6 rounded-full border-2
 }
