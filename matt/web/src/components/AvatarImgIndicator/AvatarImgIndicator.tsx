@@ -1,7 +1,19 @@
 import Icon from '../icons/Icon'
 import AvatarIndicator from '../AvatarIndicator/AvatarIndicator'
+import { DoNotDisturb } from './AvatarImgIndicator.stories'
 
-const AvatarImgIndicator = ({ image, indicator }) => {
+export enum indicatorStatus {
+  check = 'check',
+  pending = 'minus',
+  question = 'question',
+}
+
+export interface IAvatarImgIndicator {
+  image: string
+  indicator: indicatorStatus
+}
+
+const AvatarImgIndicator = ({ image, indicator }: IAvatarImgIndicator) => {
   return (
     <div className="relative flex h-[68px] w-[68px] items-center justify-center rounded-full border border-spanishGreen bg-white  font-sans text-4xl font-bold text-white">
       <img
