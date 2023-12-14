@@ -46,8 +46,24 @@ label:has(+ input:invalid:not(:placeholder-shown)) {
 input:invalid:not(:placeholder-shown) {
   @apply bg-orangeRed border-fireEngineRed;
 }
+/* checkbox */
+input[type="checkbox"] {
+  @apply hidden;
+}
+input[type="checkbox"] + label {
+  @apply flex items-center gap-4 cursor-pointer;
+}
+input[type="checkbox"] + label::before{
+  @apply content-[''] w-[40px] h-[40px] block bg-unchecked;
+}
+input[type="checkbox"]:checked + label::before{
+  @apply content-[''] w-[40px] h-[40px] block bg-checked;
+}
 }
 @layer components {
+  .field {
+    @apply mb-4
+  }
   .dropdown {
     @apply relative top-6 left-6;
   }
