@@ -8,7 +8,7 @@ const PasswordFormField = () => {
     setShowPassword((prev) => !prev)
   }
   return (
-    <div className="relative">
+    <div className="relative w-full">
       <input
         type={showPassword ? 'text' : 'password'}
         required

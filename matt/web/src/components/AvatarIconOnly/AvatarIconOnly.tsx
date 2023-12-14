@@ -1,8 +1,25 @@
 import Icon, { colors } from '../icons/Icon'
-const AvatarIconOnly = ({ iconId }: { iconId: string }) => {
+const AvatarIconOnly = ({
+  iconId,
+  size = 24,
+  bgColor = 'bg-spanishGreen',
+  totalSize = 68,
+  ringColor = `ring-padua`,
+}: {
+  iconId: string
+  size: number
+  bgColor?: string
+  totalSize?: number
+  ringColor?: string
+}) => {
+  const avatarSize = `h-[${totalSize}px] w-[${totalSize}px]`
   return (
-    <div className="flex h-[68px] w-[68px] items-center justify-center rounded-full bg-spanishGreen ring-4 ring-padua">
-      <Icon id={iconId} size={24} color={colors.white}></Icon>
+    <div
+      className={`flex ${
+        avatarSize ? `h-[${totalSize}px] w-[${totalSize}px]` : ''
+      } items-center justify-center rounded-full ${bgColor} ${ringColor} ring-4`}
+    >
+      <Icon id={iconId} size={size} color={colors.white}></Icon>
     </div>
   )
 }
