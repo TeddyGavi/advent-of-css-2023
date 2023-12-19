@@ -5,12 +5,14 @@ const AvatarIconOnly = ({
   bgColor = 'bg-spanishGreen',
   totalSize = 68,
   ringColor = `ring-padua`,
+  iconColor = colors.white,
 }: {
   iconId: string
-  size: number
+  size?: number
   bgColor?: string
   totalSize?: number
   ringColor?: string
+  iconColor?: colors
 }) => {
   const avatarSize = `h-[${totalSize}px] w-[${totalSize}px]`
   return (
@@ -19,7 +21,7 @@ const AvatarIconOnly = ({
         avatarSize ? `h-[${totalSize}px] w-[${totalSize}px]` : ''
       } items-center justify-center rounded-full ${bgColor} ${ringColor} ring-4`}
     >
-      <Icon id={iconId} size={size} color={colors.white}></Icon>
+      <Icon id={iconId} size={size} color={iconColor}></Icon>
     </div>
   )
 }
