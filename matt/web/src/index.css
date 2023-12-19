@@ -82,6 +82,18 @@
 }
 
 @layer components {
+  .status-success {
+    @apply bg-spanishGreen text-white;
+  }
+
+  .status-warning {
+    @apply bg-supernova text-black;
+  }
+
+  .status-error {
+    @apply bg-orangeRed text-white;
+  }
+
   .dropdown-list li {
     @apply flex items-center gap-3;
   }
@@ -108,4 +120,7 @@
   .checkbox-input-label {
     @apply flex items-center gap-3;
   }
+}
+
+@layer utilities {
 }
