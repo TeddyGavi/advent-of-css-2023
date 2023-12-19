@@ -1,3 +1,21 @@
+export interface IconId {
+  id:
+    | 'plus'
+    | 'calendar'
+    | 'check'
+    | 'chevron'
+    | 'close'
+    | 'eyeClosed'
+    | 'logout'
+    | 'minus'
+    | 'question'
+    | 'eyeOpened'
+    | 'thumbsDown'
+    | 'thumbsUp'
+    | 'upload'
+    | 'user'
+}
+
 export enum colors {
   supernova = '#fac900',
   spicyMustard = '#6e5a0d',
@@ -22,7 +40,7 @@ export enum colors {
 }
 
 interface IIcon {
-  id: string
+  id: IconId['id']
   color?: colors
   size?: number
 }
