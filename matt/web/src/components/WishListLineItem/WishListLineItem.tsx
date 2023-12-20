@@ -1,6 +1,11 @@
 import RoundButton from '../RoundButton/RoundButton'
 
-const WishListLineItem = () => {
+const WishListLineItem = ({
+  addToWishList,
+  removeFromWishList,
+  items,
+  index,
+}) => {
   return (
     <div className="field relative mx-auto flex gap-4">
       <div className="flex flex-col gap-2">
@@ -32,10 +37,26 @@ const WishListLineItem = () => {
             className=""
             type="text"
           ></input>
-          <label>URL</label>
         </div>
       </div>
-      <RoundButton type="submit" id="plus" status="success" />
+      {items && items.length - 1 === index ? (
+        <>
+          {index}
+          <RoundButton
+            clickHandler={addToWishList}
+            type="submit"
+            id="plus"
+            status="success"
+          ></RoundButton>
+        </>
+      ) : (
+        <RoundButton
+          clickHandler={() => removeFromWishList(index)}
+          type="submit"
+          id="close"
+          status="error"
+        />
+      )}
     </div>
   )
 }
