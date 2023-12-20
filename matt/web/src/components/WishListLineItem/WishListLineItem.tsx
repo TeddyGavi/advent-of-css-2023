@@ -40,15 +40,12 @@ const WishListLineItem = ({
         </div>
       </div>
       {items && items.length - 1 === index ? (
-        <>
-          {index}
-          <RoundButton
-            clickHandler={addToWishList}
-            type="submit"
-            id="plus"
-            status="success"
-          ></RoundButton>
-        </>
+        <RoundButton
+          clickHandler={addToWishList}
+          type="submit"
+          id="plus"
+          status="success"
+        ></RoundButton>
       ) : (
         <RoundButton
           clickHandler={() => removeFromWishList(index)}

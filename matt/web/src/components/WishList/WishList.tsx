@@ -32,6 +32,10 @@ const WishList = () => {
           addToWishList={handleItemToWishList}
         />
       ))}
+
+      <button className="my-4 h-16 w-full rounded-full bg-supernova text-center font-handwriting text-xl uppercase">
+        Submit
+      </button>
     </div>
   )
 }
