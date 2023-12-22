@@ -10,6 +10,4 @@ export default meta
 
 type Story = StoryObj<typeof LoginPage>
 
-export const Primary: Story = {
-  tags: ['autodocs'],
-}
+export const Primary: Story = {}
