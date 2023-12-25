@@ -25,6 +25,7 @@ module.exports = {
         pastelMagenta: '#ff9dbf' /* pink */,
         vistaBlue: '#94D1B4' /* light green */,
         fireEngineRed: '#C52425' /* red */,
+        bombay: '#aeaeae' /* gray */,
       },
       height: {
         18: "72px",
