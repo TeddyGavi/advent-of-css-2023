@@ -71,7 +71,7 @@ button[type="submit"],input[type="submit"] {
     @apply bg-supernova text-black
   }
   .status-error {
-    @apply bg-orangeRed text-white rotate-45
+    @apply bg-orangeRed text-white
   }
   h1.page-title {
     @apply font-condensed m-0 p-0 text-center text-[116px] leading-[0.8] text-white
