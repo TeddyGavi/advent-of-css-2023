@@ -42,4 +42,5 @@ module.exports = {
     },
   },
   plugins: [],
+  safelist: ['status-success', 'status-error', 'status-warning']
 }
