@@ -20,7 +20,7 @@
 svg {
   @apply fill-current;
 }
-label {
+label, .label {
   @apply font-handwriting uppercase text-xl tracking-tighter;
 }
 input[type="text"],
@@ -64,6 +64,15 @@ button[type="submit"],input[type="submit"] {
 }
 }
 @layer components {
+  .status-success {
+    @apply bg-spanishGreen text-white
+  }
+  .status-warning {
+    @apply bg-supernova text-black
+  }
+  .status-error {
+    @apply bg-orangeRed text-white rotate-45
+  }
   h1.page-title {
     @apply font-condensed m-0 p-0 text-center text-[116px] leading-[0.8] text-white
   }
