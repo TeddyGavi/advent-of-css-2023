@@ -10,123 +10,147 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 /**
  * END --- SETUP TAILWINDCSS EDIT
  */
 @layer base {
   main {
-    @apply z-10 relative mb-[350px] overflow-scroll;
+    @apply relative z-10 mb-[350px] overflow-scroll;
   }
-svg {
-  @apply fill-current;
-}
-label, .label {
-  @apply font-handwriting uppercase text-xl tracking-tighter;
-}
-input[type="text"],
-input[type="email"],
-input[type="password"],
-input[type="number"],
-input[type="tel"],
-input[type="url"]
- {
-  @apply font-sans text-2xl h-[100px] w-full px-7 border-black border-2;
-}
-label:has(+ input:placeholder-shown) {
-  @apply text-3xl absolute top-8 left-8 pointer-events-none transition-all duration-300;
-}
-label:has(+ input:focus),
-label:has(+ input){
-  @apply absolute top-2 left-2 text-xl
+
+  svg {
+    @apply fill-current;
+  }
+
+  label,
+  .label {
+    @apply font-handwriting text-xl uppercase tracking-tighter;
+  }
+
+  input[type='text'],
+  input[type='email'],
+  input[type='password'],
+  input[type='number'],
+  input[type='tel'],
+  input[type='url'] {
+    @apply h-[100px] w-full px-7 font-sans text-2xl;
+  }
+
+  label:has(+ input:placeholder-shown) {
+    @apply pointer-events-none absolute left-8 top-8 text-3xl transition-all duration-300;
+  }
+
+  label:has(+ input:focus),
+  label:has(+ input) {
+    @apply absolute left-2 top-2 text-xl;
+  }
+
+  label:has(+ input:invalid:not(:placeholder-shown)) {
+    @apply text-white;
+  }
+
+  input:invalid:not(:placeholder-shown) {
+    @apply border-fireEngineRed bg-orangeRed;
+  }
+
+  /* checkbox */
+  input[type='checkbox'] {
+    @apply hidden;
+  }
+
+  input[type='checkbox']+label {
+    @apply flex cursor-pointer items-center gap-4;
+  }
+
+  input[type='checkbox']+label::before {
+    @apply block h-[40px] w-[40px] bg-unchecked content-[''];
+  }
+
+  input[type='checkbox']:checked+label::before {
+    @apply block h-[40px] w-[40px] bg-checked content-[''];
+  }
+
+  button[type='submit'],
+  input[type='submit'] {
+    @apply w-full rounded-full bg-supernova py-5 font-handwriting text-3xl uppercase text-black;
+  }
+  input.short {
+    @apply h-[52px] text-lg outline-none
+  }
 }
 
-label:has(+ input:invalid:not(:placeholder-shown)) {
-  @apply text-white;
-}
-input:invalid:not(:placeholder-shown) {
-  @apply bg-orangeRed border-fireEngineRed;
-}
-/* checkbox */
-input[type="checkbox"] {
-  @apply hidden;
-}
-input[type="checkbox"] + label {
-  @apply flex items-center gap-4 cursor-pointer;
-}
-input[type="checkbox"] + label::before{
-  @apply content-[''] w-[40px] h-[40px] block bg-unchecked;
-}
-input[type="checkbox"]:checked + label::before{
-  @apply content-[''] w-[40px] h-[40px] block bg-checked;
-}
-button[type="submit"],input[type="submit"] {
-  @apply bg-supernova font-handwriting uppercase text-3xl text-black w-full rounded-full py-5
-}
-}
 @layer components {
   .status-success {
-    @apply bg-spanishGreen text-white
+    @apply bg-spanishGreen text-white;
   }
+
   .status-warning {
-    @apply bg-supernova text-black
+    @apply bg-supernova text-black;
   }
+
   .status-error {
-    @apply bg-orangeRed text-white
+    @apply bg-orangeRed text-white;
   }
+
   h1.page-title {
-    @apply font-condensed m-0 p-0 text-center text-[116px] leading-[0.8] text-white
+    @apply m-0 p-0 text-center font-condensed text-[116px] leading-[0.8] text-white;
   }
+
   .with-rulers {
-    @apply flex items-center gap-7 justify-center
+    @apply flex items-center justify-center gap-7;
   }
 
   .with-rulers:before,
   .with-rulers:after {
     content: '';
-    @apply w-[72px] h-[6px] bg-current block
+    @apply block h-[6px] w-[72px] bg-current;
   }
-
 
   .field {
-    @apply mb-4
+    @apply mb-4;
   }
+
   .dropdown {
-    @apply relative top-6 left-6;
+    @apply relative left-6 top-6;
   }
 
   .dropdown:before {
-    content: "";
-    @apply border-[12px] border-transparent border-b-white absolute -top-6 left-8
+    content: '';
+    @apply absolute -top-6 left-8 border-[12px] border-transparent border-b-white;
   }
 
   .dropdown li {
-    @apply font-condensed text-3xl uppercase text-black flex items-center gap-3
+    @apply flex items-center gap-3 font-condensed text-3xl uppercase text-black;
   }
-.indicator {
-  @apply center h-6 w-6 rounded-full border-2
-}
-.top-nav li {
-  @apply font-condensed tracking-wide text-[72px] uppercase leading-none gap-3
-}
 
-.top-nav li a {
-  @apply hover:text-orangeRed
-}
+  .indicator {
+    @apply center h-6 w-6 rounded-full border-2;
+  }
 
-.bottom-nav ul {
-  @apply flex flex-col gap-3
-}
+  .top-nav li {
+    @apply gap-3 font-condensed text-[72px] uppercase leading-none tracking-wide;
+  }
 
-.bottom-nav ul a {
-  @apply hover:text-orangeRed
-}
+  .top-nav li a {
+    @apply hover:text-orangeRed;
+  }
+
+  .bottom-nav ul {
+    @apply flex flex-col gap-3;
+  }
+
+  .bottom-nav ul a {
+    @apply hover:text-orangeRed;
+  }
 }
 
 @layer utilities {
-.center {
-  @apply flex justify-center items-center border-white;
-}
-.same {
-  @apply h-18 w-18 rounded-full border-avatar object-cover bg-spanishGreen text-2xl font-bold uppercase text-white
-}
+  .center {
+    @apply flex items-center justify-center border-white;
+  }
+
+  .same {
+    @apply h-18 w-18 rounded-full border-avatar bg-spanishGreen object-cover text-2xl font-bold uppercase text-white;
+  }
 }
