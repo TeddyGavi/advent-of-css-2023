@@ -1,7 +1,7 @@
 import RoundButton from '../RoundButton/RoundButton'
 import {RoundButtonProps} from '../RoundButton/RoundButton'
 
-interface WishlistFieldProps {
+export interface WishlistFieldProps {
   name: string
   number: number
   roundButton: RoundButtonProps
