@@ -1,6 +1,6 @@
 import Icon from '../Icon/Icon'
 
-interface RoundButtonProps {
+export interface RoundButtonProps {
   status: 'success' | 'warning' | 'error'
 }
 
